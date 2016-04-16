@@ -1,0 +1,25 @@
+.sunday{
+	color:red;
+}
+.saturday{
+	color:#3C6;
+}
+.solar{
+	font-size:18px;
+}
+.lunar{
+	font-size:14px;
+	color:#C60;
+}
+body{
+	font-family:"田氏颜体大字库", "微软雅黑";
+}
+thead{
+	font-size:20px;
+}
+cell:hover{
+	background-color:#FF9;	
+}
+.week{
+	background-color:navajowhite;
+}
