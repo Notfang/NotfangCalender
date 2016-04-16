@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>canlender</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<script src="calender.js"></script>
+<script src="festival.js"></script>
+
+</head>
+
+<body>
+<div class = "container-fluid">
+<div class="row-fluid">
+<div class="span12"><h1 class="text-center" style="color: #fbb450;">我不方的万年历</h1></div>
+<div class = "">
+<table class="table table-hover table-bordered table-striped" id="myTable">
+    <thead>
+        <tr>
+        	<td colspan="7" style="background-color: rgba(251, 180, 80, 0.68);">
+                <span class="help-inline">公历</span>           
+                <select id="selectY" onchange="changeCalender()" class="span3">
+					<script>
+                        for(i = 1900; i < 2050; i++){
+                            document.write('<option>' + i);
+                        }
+                    </script>
+                </select>
+                <span class="help-inline">年</span>
+                <select id="selectM" onchange="changeCalender()" class="span3">
+					<script>
+                        for (i = 1; i < 13; i++){
+                            document.write('<option>' + i);
+                        }
+                    </script>
+                </select>
+                <span class="help-inline">月</span>
+				<span class="help-inline" id="SX" style="color: #ee5f5b;">【生肖】</span>
+             </td>
+        </tr>
+    </thead>
+<tbody>
+    <tr>        
+        <th style="background-color: rgba(251, 180, 80, 0.68);">日</th>
+        <th style="background-color: rgba(251, 180, 80, 0.68);">一</th>
+        <th style="background-color: rgba(251, 180, 80, 0.68);">二</th>
+        <th style="background-color: rgba(251, 180, 80, 0.68);">三</th>
+        <th style="background-color: rgba(251, 180, 80, 0.68);">四</th>
+        <th style="background-color: rgba(251, 180, 80, 0.68);">五</th>
+        <th style="background-color: rgba(251, 180, 80, 0.68);">六</th>
+    </tr>
+    <script>
+		for(var i = 0; i < 6; i++){
+			document.write("<tr>");
+			for(var j = 0; j < 7; j++){
+				document.write("<td id = 'cell" + i + j +"'  onclick='clickShow(this.id)'>");
+				document.write("<div id='"+(i*7+j)+"' class='text-center cell'>");
+				if(j == 0){
+					document.write("<font id='solar"+(i*7+j)+"' class='solar sunday'></font><br>");
+				}
+				else if(j == 6){
+					document.write("<font id='solar"+(i*7+j)+"' class='solar saturday'></font><br>");
+				}
+				else{
+					document.write("<font id='solar"+(i*7+j)+"' class='solar'></font><br>");
+				}
+				document.write("<font id='lunar"+(i*7+j)+"' class='lunar'></font><br>");
+				document.write("<font class='festival'></font>");
+				document.write("</div></td>");
+			}
+			document.write("</tr>");
+		}
+    </script>
+	<thead>
+        <tr>
+        	<td colspan="7" style="background-color: rgba(251, 180, 80, 0.68);">
+				<input id = "addStr" type="text" class="span6" placeholder="点击日期添加日程或生日...">
+				<div class="btn" onclick="addThings()">添加</div>
+            </td>
+        </tr>
+    </thead>
+</tbody>
+						
+</table>
+</div>
+</div>
+</div>
+<div class="text-center"><span>作者：Notfang(徐东方)</span></div>
+</body>
+</html>
